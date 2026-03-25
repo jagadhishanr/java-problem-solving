@@ -193,26 +193,206 @@ import java.util.*;
 //     }
 // }
 
+// public class practice{
+//     public static void main(String []args){
+//         Scanner scan = new Scanner(System.in);
+//         int n = scan.nextInt();
+//         int arr[] = new int[n];
+//         for(int i=0; i<n; i++){
+//             arr[i] = scan.nextInt();
+//         }
+//         int start =0;
+//         int end = arr.length-1;
+//         while(start<end){
+//             int temp = arr[start];
+//             arr[start] = arr[end];
+//             arr[end] = temp;
+//             start++;
+//             end--;
+//         }
+//         for(int j=0; j<arr.length; j++){
+//             System.out.println(arr[j] + " ");
+//         }
+
+//     }
+// }
+
+// public class practice{
+//     public static void main(String[]args){
+//         Scanner scan = new Scanner(System.in);
+//         int enter = scan.nextInt();
+//         int arr[] = new int[enter];
+//         for(int i=0; i< enter; i++){
+//             arr[i] = scan.nextInt();
+//         }
+//         int max = arr[0];
+//         for(int j=0; j< arr.length; j++){
+//             if(arr[j]>max){
+//                 max = arr[j];
+//             }
+//         }
+//         System.out.println("largest element is " + max);
+//     }
+// }
+
+// public class practice{
+//     public static void main(String [] args){
+//         Scanner scan = new Scanner(System.in);
+//         int enter = scan.nextInt();
+//         int arr[] = new int[enter];
+//         for(int i=0; i < enter; i++){
+//             arr[i] = scan.nextInt();
+//         }
+//         int min = arr[0];
+//         for(int j=0; j<arr.length; j++){
+//             if(arr[j]<min){
+//                 min = arr[j];
+//             }
+//         }
+//         System.out.println("smallest element is" + min);
+//     }
+// }
+
+
+// public class practice{
+//     public static void main(String[]args){
+//         Scanner scan = new Scanner(System.in);
+//         int enter = scan.nextInt();
+//         int arr[] = new int[enter];
+//         for(int i=0; i<enter; i++){
+//             arr[i] = scan.nextInt();
+//         }
+//         int max = arr[0];
+//         for(int j=0; j< arr.length; j++){
+//             if(arr[j]>max){
+//                 max = arr[j];
+//             }
+//         }
+//         int secondLarge = Integer.MIN_VALUE;
+//         for(int k=0; k<arr.length; k++){
+//             if(arr[k] != max && arr[k]>secondLarge){
+//                 secondLarge = arr[k];
+//             }
+//         }
+//         System.out.println(secondLarge);
+
+//     }
+// }
+
+
+// public class practice{
+//     public static void main(String[] args){
+//         Scanner scan = new Scanner(System.in);
+//         System.out.println("Enter the array size");
+//         int enter = scan.nextInt();
+//         int arr[] = new int[enter];
+//         for(int i=0; i< enter; i++){
+//             arr[i] = scan.nextInt();
+//         }
+//         System.out.println("Enter the target element");
+//         int target = scan.nextInt();
+//         boolean isPreasent = false;
+//         for(int i=0; i<arr.length; i++){
+// if(arr[i]==target){
+//     System.out.println("your targeted element is" + " " + target + " " + "present");
+//     isPreasent = true;
+//     break;
+// }
+//         }
+//         if(!isPreasent){
+//             System.out.println("your targeted element is " + " " + target + " " + "element is not present");
+//         }
+//     }
+// }
+
+// public class practice{
+//     public static void main(String[]args){
+//         Scanner scan = new Scanner(System.in);
+//         int enter = scan.nextInt();
+//         int arr[] = new int[enter];
+//         int sum = 0;
+//         for(int i=0; i< enter; i++){
+//             arr[i] = scan.nextInt();
+//         }
+//         for(int i=0; i< enter; i++){
+//             sum = arr[i]+sum;
+//         }
+//         System.out.println("sum of elements are" + " " + sum);
+//     }
+// }
+
+// public class practice{
+//     public static void main(String[] args){
+//         Scanner scan = new Scanner(System.in);
+//         int enter = scan.nextInt();
+//         int arr[] = new int[enter];
+//         for(int i=0; i<arr.length; i++){
+//             arr[i] = scan.nextInt();
+//         }
+//         int start = 0;
+//         int end = arr.length-1;
+//         while(start < end){
+//             int temp = arr[start];
+//             arr[start] = arr[end];
+//             arr[end] = temp;
+//             start ++;
+//             end--;
+//         }
+//         System.out.println("reversed elements are");
+//         for (int j=0; j<arr.length; j++){
+//             System.out.print(arr[j] + " ");
+//         }
+//     }
+// }
+
 public class practice{
-    public static void main(String []args){
-        Scanner scan = new Scanner(System.in);
-        int n = scan.nextInt();
-        int arr[] = new int[n];
-        for(int i=0; i<n; i++){
-            arr[i] = scan.nextInt();
-        }
-        int start =0;
-        int end = arr.length-1;
-        while(start<end){
+    static void reverse(int arr[], int start, int end){
+        while(start < end){
             int temp = arr[start];
             arr[start] = arr[end];
             arr[end] = temp;
             start++;
             end--;
         }
-        for(int j=0; j<arr.length; j++){
-            System.out.println(arr[j] + " ");
-        }
-
     }
+static void rightRotate(int arr[], int k){
+    int n = arr.length;
+    k = k%n;
+    reverse(arr, 0 , n-1);
+    reverse(arr, k, n-1);
+    reverse(arr, 0, k-1);
+}
+static void leftRotate(int arr[], int k){
+    int n = arr.length;
+    k = k%n;
+    rightRotate(arr, n-k);
+}
+public static void main(String[] args){
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Enter Array size");
+    int n = scan.nextInt();
+    int arr[] = new int[n];
+    System.out.println("Enter ARRAY Elements");
+    for(int i=0; i<n; i++){
+        arr[i] = scan.nextInt();
+    }
+    System.out.println("Enter K Number");
+    int k = scan.nextInt();
+    System.out.println("Enter L/R");
+    char en = scan.next().charAt(0);
+    if(en=='L' || en =='l'){
+        leftRotate(arr, k);
+    }
+    else if(en == 'R' || en == 'r'){
+        rightRotate(arr, k);
+    }
+    else{
+        System.out.println("INVALID ACCESS DENIED");
+        return;
+    }
+    for(int num : arr){
+        System.out.print(num + " ");
+    }
+}
+    
 }
