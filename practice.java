@@ -345,54 +345,106 @@ import java.util.*;
 //     }
 // }
 
-public class practice{
-    static void reverse(int arr[], int start, int end){
-        while(start < end){
-            int temp = arr[start];
-            arr[start] = arr[end];
-            arr[end] = temp;
-            start++;
-            end--;
-        }
-    }
-static void rightRotate(int arr[], int k){
-    int n = arr.length;
-    k = k%n;
-    reverse(arr, 0 , n-1);
-    reverse(arr, k, n-1);
-    reverse(arr, 0, k-1);
-}
-static void leftRotate(int arr[], int k){
-    int n = arr.length;
-    k = k%n;
-    rightRotate(arr, n-k);
-}
-public static void main(String[] args){
-    Scanner scan = new Scanner(System.in);
-    System.out.println("Enter Array size");
-    int n = scan.nextInt();
-    int arr[] = new int[n];
-    System.out.println("Enter ARRAY Elements");
-    for(int i=0; i<n; i++){
-        arr[i] = scan.nextInt();
-    }
-    System.out.println("Enter K Number");
-    int k = scan.nextInt();
-    System.out.println("Enter L/R");
-    char en = scan.next().charAt(0);
-    if(en=='L' || en =='l'){
-        leftRotate(arr, k);
-    }
-    else if(en == 'R' || en == 'r'){
-        rightRotate(arr, k);
-    }
-    else{
-        System.out.println("INVALID ACCESS DENIED");
-        return;
-    }
-    for(int num : arr){
-        System.out.print(num + " ");
-    }
-}
+// public class practice{
+//     static void reverse(int arr[], int start, int end){
+//         while(start < end){
+//             int temp = arr[start];
+//             arr[start] = arr[end];
+//             arr[end] = temp;
+//             start++;
+//             end--;
+//         }
+//     }
+// static void rightRotate(int arr[], int k){
+//     int n = arr.length;
+//     k = k%n;
+//     reverse(arr, 0 , n-1);
+//     reverse(arr, k, n-1);
+//     reverse(arr, 0, k-1);
+// }
+// static void leftRotate(int arr[], int k){
+//     int n = arr.length;
+//     k = k%n;
+//     rightRotate(arr, n-k);
+// }
+// public static void main(String[] args){
+//     Scanner scan = new Scanner(System.in);
+//     System.out.println("Enter Array size");
+//     int n = scan.nextInt();
+//     int arr[] = new int[n];
+//     System.out.println("Enter ARRAY Elements");
+//     for(int i=0; i<n; i++){
+//         arr[i] = scan.nextInt();
+//     }
+//     System.out.println("Enter K Number");
+//     int k = scan.nextInt();
+//     System.out.println("Enter L/R");
+//     char en = scan.next().charAt(0);
+//     if(en=='L' || en =='l'){
+//         leftRotate(arr, k);
+//     }
+//     else if(en == 'R' || en == 'r'){
+//         rightRotate(arr, k);
+//     }
+//     else{
+//         System.out.println("INVALID ACCESS DENIED");
+//         return;
+//     }
+//     for(int num : arr){
+//         System.out.print(num + " ");
+//     }
+// }
     
+// }
+
+
+// public class practice{
+//     public static void main(String[] args){
+//         Scanner scan = new Scanner(System.in);
+//         int type = scan.nextInt();
+//         int original = type;
+//         int rev = 0;
+//         while(type ! =0 ){
+//             int temp = type%10;
+//             rev = rev * 10+temp;
+//             type = type/10;
+//         }
+//         if(original == rev){
+//             System.out.println("Number is palindrome");
+//         }
+//         else{
+//             System.out.println("Number is not an plaindrome");
+//         }
+//     }
+// }
+
+// public class practice{
+//     public static void main(String[]args){
+//         Scanner scan = new Scanner(System.in);
+//         int num = scan.nextInt();
+//         for(int i=0; i<=num; i++){
+//             System.out.println(i);
+//         }
+//     }
+// }
+
+// public class practice{
+//     public static void main(String[]args){
+//         Scanner scan = new Scanner(System.in);
+//         int hi = scan.nextInt();
+//         for(int i=hi; i>=0; i--){
+//             System.out.print(i + " ");
+//         }
+//     }
+// }
+public class practice{
+    public static void main(String[]args){
+        Scanner scan = new Scanner(System.in);
+        int num = scan.nextInt();
+        int [] arr = new int[num];
+        for(int i=0; i<num; i++){
+            arr[i] = scan.nextInt();
+        }
+System.out.println(arr[i]);
+    }
 }
